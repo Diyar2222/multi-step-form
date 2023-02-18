@@ -225,9 +225,13 @@ input:invalid[focused=true] {
 
 .back-btn {
   background-color: transparent;
-  color: rgb(5, 65, 138);
+  color: hsl(231deg, 11%, 63%);
   border: none;
   cursor: pointer;
+  transition: all ease 0.5s;
+}
+.back-btn:hover {
+  color: hsl(213deg, 96%, 18%);
 }
 
 .error-message {
@@ -243,6 +247,14 @@ input:invalid[focused=true] {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.5s all ease;
+}
+.next-btn:hover {
+  background-color: rgb(105, 164, 236);
+}
+
+.not-active {
+  color: hsl(231deg, 11%, 63%);
 }
 
 .summary {

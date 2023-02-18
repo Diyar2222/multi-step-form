@@ -4,7 +4,8 @@ $primary-colors:(
     'Pastel-blue':hsl(228, 100%, 84%),
     'Light-blue':hsl(206, 94%, 87%),
     'Strawberry-red':hsl(354, 84%, 57%),
-    'Button-color':rgb(5, 65, 138)
+    'Button-color':rgb(5, 65, 138),
+    'Button-hover':rgb(105, 164, 236)
     );
 $neutral-colors:(
     'Cool-gray':hsl(231, 11%, 63%),
@@ -45,9 +46,13 @@ $font-family:'Ubuntu', sans-serif;
 }
 @mixin back-btn{
     background-color: transparent;
-    color: map-get($primary-colors , "Button-color" );
+    color: map-get($neutral-colors , "Cool-gray" );
     border: none;
     cursor: pointer;
+    transition: all ease 0.5s;
+    &:hover{
+        color:map-get($primary-colors , 'Marine blue' );
+    }
 }
 @mixin next-btn{
     padding: 10px 15px;
@@ -56,6 +61,10 @@ $font-family:'Ubuntu', sans-serif;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: 0.5s all ease;
+    &:hover{
+        background-color:map-get($primary-colors, 'Button-hover');
+    }
 }
 @mixin media-large-desktop {
     @media screen and (min-width:1240px){

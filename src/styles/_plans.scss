@@ -76,3 +76,6 @@
 .next-btn{
     @include next-btn
 }
+.not-active {
+    color:map-get($neutral-colors, 'Cool-gray' );
+}

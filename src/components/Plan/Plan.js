@@ -34,12 +34,12 @@ const Plan = () => {
         </div>
         {planIsEmpty && <div className='error-message'>You have to choose one plan</div>}
         <div className='plan__period'>
-            <h5>Monthly</h5>
+            <h5 className={!monthly ? 'not-active' : ''}>Monthly</h5>
             <div className='slider'
             onClick={()=>dispatch(planActions.changePeriod())}>
                 <div className={`slider__circle ${!monthly ?'yearly':''}`}></div>
             </div>
-            <h5>Yearly</h5>
+            <h5 className={monthly ? 'not-active' : ''}>Yearly</h5>
         </div>
         <Footer nextStepFn={handleSubmit}/>
     </section>
