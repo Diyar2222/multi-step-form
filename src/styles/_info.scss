@@ -1,0 +1,48 @@
+.info{
+    margin-right: 2rem;
+    position: relative;
+    &-inputs{
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+        font-weight: 500;
+        color:map-get($primary-colors, 'Marine blue');
+    }
+    &-input{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        &-title{
+            margin-bottom: 5px;
+        }
+        input{
+            padding: 10px 10px;
+            outline: none;
+            color:map-get($primary-colors, 'Marine blue');
+            font-weight: 700;
+            border-radius: 5px;
+            border: 1px solid gray;
+        };
+    }
+    .error-message {
+        position: absolute;
+        top:-5px;
+        right: 0;
+        color: map-get($primary-colors, 'Strawberry-red' );
+        font-size: 0.8rem;
+        display: none;
+    }
+    footer{
+        position: absolute;
+        bottom: 10px;
+        right: 0;
+    }
+}
+input:invalid[focused="true"] + .error-message {
+  display: flex;
+  color: red;
+}
+input:invalid[focused="true"]{
+    border:1px solid map-get($primary-colors, 'Strawberry-red' )
+}
+

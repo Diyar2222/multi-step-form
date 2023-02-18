@@ -1,0 +1,180 @@
+@include media-desktop{
+    header{
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        p {
+            font-size: 0.7rem;
+            margin-bottom: 1rem;
+        }
+    }
+    .next-btn{
+        padding: 6px 10px;
+    }
+    .info{
+        height: 50%;
+        width: 60%;
+        &-inputs{
+            position: relative;
+        }
+        &-input input{
+            padding: 5px 5px;
+        }
+        .error-message {
+            font-size: 0.6rem;
+        }
+        footer{
+            position: absolute;
+            bottom: -50px;
+            right: 0;
+        }
+    }
+    .sidebar-img{
+        width: 170px;
+    }
+    .container{
+        display: flex;
+        justify-content: space-between;
+        height: 350px;
+        width: 600px;
+        &__left{
+            width:180px;
+            .steps{
+                width: 100%;
+                margin-left: 1.5rem;
+                button{
+                    width: 30px;
+                    height: 30px;
+                    margin-right: 0.5rem;
+                }
+                p{
+                    font-size: 0.8rem;
+                }
+                h4{
+                    font-size: 0.7rem;
+                }
+            }
+        }
+    }
+    .plan{
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__option{
+            width: 6.2rem;
+            height: 9rem;
+            img{
+                margin-bottom: 2rem;
+            }
+            h4,p{
+                font-size: 0.8rem;
+            }
+            h5{
+                font-size: 0.7rem;
+            }
+        }
+        &__period{
+            margin-top: 0.5rem;
+            width: 50%;
+            font-size: 0.8rem;
+        }
+       
+    }
+   .add-ons{
+        width: 60%;
+        &-options{
+            margin-top: 0.5rem;
+        }
+        &-option{
+            height: 3rem;
+        }
+   }
+   .summary{
+    width: 60%;
+    &__selected-add-on{
+        margin-top: 0.5rem;
+        h5{
+            font-size: 0.8rem;
+        }
+    }
+    &__total{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 1rem;
+        margin-top: -0.5rem;
+        h3{
+            font-size: 1rem;
+        }
+    }
+   }
+   .error-message{
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    }
+}
+@include media-mobile{
+    .container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: map-get($neutral-colors , 'Magnolia' );
+        align-items: baseline;
+        &__left{
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: url('../images/bg-sidebar-mobile.svg');
+            width: 100%;
+            height: 30%;
+            border-radius: 0;
+            display: flex;
+            justify-content: center;
+            align-items:flex-start;
+            &-steps{
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .steps__info{
+            display: none;
+        }
+        .steps:first-child{
+            margin-top: 1rem;
+        }
+        .steps{
+            gap:5px;
+            width: 50%;
+        }
+    }
+    .info{
+       @include mobile-background;
+       footer{
+        margin-top: 10rem;
+       }
+    }
+    .plan{
+       @include mobile-background;
+       footer{
+        @include mobile-footer
+    }
+    }
+    .add-ons{
+        @include mobile-background;
+        footer{
+            @include mobile-footer
+           }
+    }
+    .summary{
+        @include mobile-background;
+        footer{
+           @include mobile-footer
+           }
+    }
+}

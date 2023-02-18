@@ -1,0 +1,53 @@
+.container{
+    height: 500px;
+    width: 800px;
+    background-color: map-get($neutral-colors, 'White' );
+    border-radius: 10px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap:4rem;
+    &__left{
+        background-image: url('../images/bg-sidebar-desktop.svg');
+        height:100%;
+        border-radius: 10px;
+        background-position: center;
+        background-size: cover;
+        &-steps{
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            p{
+                color:map-get($neutral-colors , 'Cool-gray' );
+            }
+            h4{
+                color:map-get($neutral-colors , 'White' );
+            }
+        }
+        .steps:first-child{
+            margin-top: 3rem;
+        }
+        .steps{
+            display: flex;
+            margin-top: 1rem;
+            gap:10px;
+            width: 80%;
+            button{
+                border-radius: 50%;
+                background-color: transparent;
+                border: 1px solid map-get($neutral-colors, 'Light-gray' );
+                height: 2rem;
+                width: 2rem;
+                color:map-get($neutral-colors, 'Alabaster');
+                cursor: pointer;
+                font-weight: 700;
+            }
+            .currentStep{
+                background-color: map-get($neutral-colors ,'Magnolia' );
+                color: map-get($primary-colors , 'Marine blue' );
+            }
+        }
+    }
+}
+

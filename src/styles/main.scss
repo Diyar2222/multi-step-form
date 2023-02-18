@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+@import 'config';
+@import 'container';
+@import 'info';
+@import 'add-ons';
+@import 'plans';
+@import 'summary';
+@import 'thank-you';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-family;
+}
+#root {
+    background-color: map-get($neutral-colors , 'Magnolia' );
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header {
+    h3 {
+        color:map-get($primary-colors, 'Marine blue');
+        font-size: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+    p {
+        color:map-get($neutral-colors , 'Cool-gray' );
+        font-size: 0.8rem;
+        margin-bottom: 2rem;
+    }
+}
+@import 'responsive';

@@ -1,0 +1,578 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
+.container {
+  height: 500px;
+  width: 800px;
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 10px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+}
+.container__left {
+  background-image: url("../images/bg-sidebar-desktop.svg");
+  height: 100%;
+  border-radius: 10px;
+  background-position: center;
+  background-size: cover;
+}
+.container__left-steps {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container__left-steps p {
+  color: hsl(231deg, 11%, 63%);
+}
+.container__left-steps h4 {
+  color: hsl(0deg, 0%, 100%);
+}
+.container__left .steps:first-child {
+  margin-top: 3rem;
+}
+.container__left .steps {
+  display: flex;
+  margin-top: 1rem;
+  gap: 10px;
+  width: 80%;
+}
+.container__left .steps button {
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid hsl(229deg, 24%, 87%);
+  height: 2rem;
+  width: 2rem;
+  color: hsl(231deg, 100%, 99%);
+  cursor: pointer;
+  font-weight: 700;
+}
+.container__left .steps .currentStep {
+  background-color: hsl(217deg, 100%, 97%);
+  color: hsl(213deg, 96%, 18%);
+}
+
+.info {
+  margin-right: 2rem;
+  position: relative;
+}
+.info-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-weight: 500;
+  color: hsl(213deg, 96%, 18%);
+}
+.info-input {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.info-input-title {
+  margin-bottom: 5px;
+}
+.info-input input {
+  padding: 10px 10px;
+  outline: none;
+  color: hsl(213deg, 96%, 18%);
+  font-weight: 700;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+.info .error-message {
+  position: absolute;
+  top: -5px;
+  right: 0;
+  color: hsl(354deg, 84%, 57%);
+  font-size: 0.8rem;
+  display: none;
+}
+.info footer {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+}
+
+input:invalid[focused=true] + .error-message {
+  display: flex;
+  color: red;
+}
+
+input:invalid[focused=true] {
+  border: 1px solid hsl(354deg, 84%, 57%);
+}
+
+.add-ons {
+  position: relative;
+  margin-right: 2rem;
+}
+.add-ons-options {
+  margin-top: 2rem;
+}
+.add-ons-option {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 4rem;
+  border: 1px solid hsl(231deg, 11%, 63%);
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 1rem;
+}
+.add-ons-option:hover {
+  border: 1px solid hsl(243deg, 100%, 62%);
+}
+.add-ons .option__left {
+  display: flex;
+  gap: 1.5rem;
+}
+.add-ons p {
+  color: hsl(231deg, 11%, 63%);
+  font-size: 0.8rem;
+}
+.add-ons footer {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plan {
+  position: relative;
+  margin-right: 2rem;
+}
+.plan__options {
+  display: flex;
+  gap: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.plan__option {
+  cursor: pointer;
+  width: 8rem;
+  height: 11rem;
+  border-radius: 5px;
+  border: 1px solid hsl(231deg, 11%, 63%);
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.8rem;
+  padding-top: 0.8rem;
+  color: hsl(213deg, 96%, 18%);
+}
+.plan__option:hover {
+  border: 1px solid hsl(243deg, 100%, 62%);
+}
+.plan__option img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 3.5rem;
+}
+.plan p {
+  color: hsl(231deg, 11%, 63%);
+  font-size: 0.8rem;
+}
+.plan__period {
+  margin-top: 2rem;
+  padding: 0.5rem;
+  background-color: hsl(217deg, 100%, 97%);
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  gap: 0.5rem;
+  align-items: center;
+}
+.plan footer {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider {
+  width: 2.3rem;
+  height: 1.2rem;
+  background-color: rgb(5, 65, 138);
+  border-radius: 25px;
+  cursor: pointer;
+}
+.slider__circle {
+  transition: transform 5s all ease-in;
+  width: 1rem;
+  height: 1rem;
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 50%;
+  margin-top: 0.1rem;
+  margin-left: 0.1rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.yearly {
+  transform: translateX(17px);
+}
+
+.selected {
+  border: 1px solid hsl(243deg, 100%, 62%);
+  background-color: hsl(206deg, 94%, 87%);
+}
+
+.back-btn {
+  background-color: transparent;
+  color: rgb(5, 65, 138);
+  border: none;
+  cursor: pointer;
+}
+
+.error-message {
+  color: hsl(354deg, 84%, 57%);
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.next-btn {
+  padding: 10px 15px;
+  background-color: rgb(5, 65, 138);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.summary {
+  margin-right: 2rem;
+  position: relative;
+}
+.summary p {
+  color: hsl(231deg, 11%, 63%);
+  font-size: 0.8rem;
+}
+.summary__info {
+  margin-top: 2rem;
+  width: 100%;
+  height: auto;
+  background-color: hsl(217deg, 100%, 97%);
+  border-radius: 10px;
+  padding: 1rem;
+}
+.summary__selected-plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: hsl(213deg, 96%, 18%);
+}
+.summary__selected-add-on {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+.summary__selected-add-on h5 {
+  font-weight: 500;
+  color: hsl(213deg, 96%, 18%);
+}
+.summary__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+}
+.summary__total h3 {
+  color: hsl(243deg, 100%, 62%);
+}
+.summary__total h5 {
+  font-weight: 700;
+  font-size: 1rem;
+  color: hsl(213deg, 96%, 18%);
+}
+.summary footer {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.change-btn {
+  background-color: transparent;
+  border: none;
+  color: rgb(5, 65, 138);
+  margin: 0.5rem 0;
+}
+.change-btn:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.underline {
+  width: 100%;
+  height: 1px;
+  background-color: hsl(231deg, 11%, 63%);
+}
+
+.thank-you {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+.thank-you h2 {
+  color: hsl(213deg, 96%, 18%);
+  font-size: 2rem;
+}
+.thank-you p {
+  color: hsl(231deg, 11%, 63%);
+  font-size: 0.8rem;
+  text-align: center;
+  margin: 0 3rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+#root {
+  background-color: hsl(217deg, 100%, 97%);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header h3 {
+  color: hsl(213deg, 96%, 18%);
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+header p {
+  color: hsl(231deg, 11%, 63%);
+  font-size: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 820px) {
+  header h3 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+  header p {
+    font-size: 0.7rem;
+    margin-bottom: 1rem;
+  }
+  .next-btn {
+    padding: 6px 10px;
+  }
+  .info {
+    height: 50%;
+    width: 60%;
+  }
+  .info-inputs {
+    position: relative;
+  }
+  .info-input input {
+    padding: 5px 5px;
+  }
+  .info .error-message {
+    font-size: 0.6rem;
+  }
+  .info footer {
+    position: absolute;
+    bottom: -50px;
+    right: 0;
+  }
+  .sidebar-img {
+    width: 170px;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    height: 350px;
+    width: 600px;
+  }
+  .container__left {
+    width: 180px;
+  }
+  .container__left .steps {
+    width: 100%;
+    margin-left: 1.5rem;
+  }
+  .container__left .steps button {
+    width: 30px;
+    height: 30px;
+    margin-right: 0.5rem;
+  }
+  .container__left .steps p {
+    font-size: 0.8rem;
+  }
+  .container__left .steps h4 {
+    font-size: 0.7rem;
+  }
+  .plan {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .plan__option {
+    width: 6.2rem;
+    height: 9rem;
+  }
+  .plan__option img {
+    margin-bottom: 2rem;
+  }
+  .plan__option h4, .plan__option p {
+    font-size: 0.8rem;
+  }
+  .plan__option h5 {
+    font-size: 0.7rem;
+  }
+  .plan__period {
+    margin-top: 0.5rem;
+    width: 50%;
+    font-size: 0.8rem;
+  }
+  .add-ons {
+    width: 60%;
+  }
+  .add-ons-options {
+    margin-top: 0.5rem;
+  }
+  .add-ons-option {
+    height: 3rem;
+  }
+  .summary {
+    width: 60%;
+  }
+  .summary__selected-add-on {
+    margin-top: 0.5rem;
+  }
+  .summary__selected-add-on h5 {
+    font-size: 0.8rem;
+  }
+  .summary__total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    margin-top: -0.5rem;
+  }
+  .summary__total h3 {
+    font-size: 1rem;
+  }
+  .error-message {
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(217deg, 100%, 97%);
+    align-items: baseline;
+  }
+  .container__left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../images/bg-sidebar-mobile.svg");
+    width: 100%;
+    height: 30%;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .container__left-steps {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .container .steps__info {
+    display: none;
+  }
+  .container .steps:first-child {
+    margin-top: 1rem;
+  }
+  .container .steps {
+    gap: 5px;
+    width: 50%;
+  }
+  .info {
+    background-color: hsl(0deg, 0%, 100%);
+    z-index: 1;
+    border-radius: 10px;
+    height: 370px;
+    padding: 1rem;
+    margin-top: -2.5rem;
+    margin-right: 0;
+    width: 90%;
+  }
+  .info footer {
+    margin-top: 10rem;
+  }
+  .plan {
+    background-color: hsl(0deg, 0%, 100%);
+    z-index: 1;
+    border-radius: 10px;
+    height: 370px;
+    padding: 1rem;
+    margin-top: -2.5rem;
+    margin-right: 0;
+    width: 90%;
+  }
+  .plan footer {
+    width: 90%;
+    left: 1rem;
+  }
+  .add-ons {
+    background-color: hsl(0deg, 0%, 100%);
+    z-index: 1;
+    border-radius: 10px;
+    height: 370px;
+    padding: 1rem;
+    margin-top: -2.5rem;
+    margin-right: 0;
+    width: 90%;
+  }
+  .add-ons footer {
+    width: 90%;
+    left: 1rem;
+  }
+  .summary {
+    background-color: hsl(0deg, 0%, 100%);
+    z-index: 1;
+    border-radius: 10px;
+    height: 370px;
+    padding: 1rem;
+    margin-top: -2.5rem;
+    margin-right: 0;
+    width: 90%;
+  }
+  .summary footer {
+    width: 90%;
+    left: 1rem;
+  }
+}/*# sourceMappingURL=main.css.map */

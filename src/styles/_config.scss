@@ -1,0 +1,89 @@
+$primary-colors:(
+    'Marine blue':hsl(213,96%,18%),
+    'Purplish-blue':hsl(243, 100%, 62%),
+    'Pastel-blue':hsl(228, 100%, 84%),
+    'Light-blue':hsl(206, 94%, 87%),
+    'Strawberry-red':hsl(354, 84%, 57%),
+    'Button-color':rgb(5, 65, 138)
+    );
+$neutral-colors:(
+    'Cool-gray':hsl(231, 11%, 63%),
+    'Light-gray':hsl(229, 24%, 87%),
+    'Magnolia':hsl(217, 100%, 97%),
+    'Alabaster':hsl(231, 100%, 99%),
+    'White':hsl(0,0%,100%)
+);
+$border:1px solid map-get($neutral-colors, 'Cool-gray' );
+$font-family:'Ubuntu', sans-serif;
+
+@mixin underline{
+    width: 100%;
+    height: 1px;
+    background-color: map-get($neutral-colors, 'Cool-gray' )
+};
+@mixin error-message {
+    color: hsl(354deg, 84%, 57%);
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+@mixin selected {
+    border:1px solid map-get($primary-colors , 'Purplish-blue' );
+    background-color: map-get($primary-colors , 'Light-blue' );
+}
+@mixin paragraphs{
+    color:map-get($neutral-colors , 'Cool-gray' );
+    font-size: 0.8rem;
+}
+@mixin footer {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin back-btn{
+    background-color: transparent;
+    color: map-get($primary-colors , "Button-color" );
+    border: none;
+    cursor: pointer;
+}
+@mixin next-btn{
+    padding: 10px 15px;
+    background-color:map-get($primary-colors, 'Button-color');
+    color:white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+@mixin media-large-desktop {
+    @media screen and (min-width:1240px){
+        @content
+    }
+};
+@mixin media-desktop {
+    @media screen and (max-width:820px){
+        @content
+    }
+};
+@mixin media-mobile {
+    @media screen and (max-width:600px){
+        @content
+    }
+};
+@mixin mobile-background{
+    background-color: map-get($neutral-colors, 'White' );
+    z-index: 1;
+    border-radius: 10px;
+    height: 370px;
+    padding: 1rem;
+    margin-top: -2.5rem;
+    margin-right: 0;
+    width: 90%;
+}
+@mixin mobile-footer{
+    width:90%;
+    left: 1rem;
+}
+
