@@ -1,5 +1,5 @@
 ## Overview
-The online site - https://multi-step-form-dr.netlify.app/
+The online site - https://multi-step-form-dr.netlify.app
 
 *Users are be able to:*
 
